@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Geoffrey C. Quimora - Professional Profile</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Dark Background */
+            color: #e0e0e0; /* Light Text */
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: #1e1e1e; /* Darker Header */
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #branding {
+            display: flex;
+            align-items: center;
+        }
+
+        #branding img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+            border: 3px solid #555; /* Darker Border */
+        }
+
+        #branding h1 {
+            margin: 0;
+            font-size: 2.2em;
+            color: #fff;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 25px;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00bfff; /* Highlight Color */
+        }
+
+        /* Showcase Section */
+        #showcase {
+            background: linear-gradient(to right, #1e1e1e, #222); /* Dark Showcase */
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        #showcase h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        #showcase p {
+            font-size: 1.4em;
+            color: #ccc;
+        }
+
+        /* Main Content */
+        #main {
+            padding: 30px 0;
+        }
+
+        #main .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        article#main-col {
+            padding-right: 20px;
+        }
+
+        article#main-col h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #fff;
+            border-bottom: 2px solid #00bfff; /* Highlight Color */
+            padding-bottom: 5px;
+        }
+
+        article#main-col p {
+            font-size: 1.1em;
+            color: #ddd;
+        }
+
+        aside#sidebar {
+            background: #1e1e1e; /* Dark Sidebar */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        aside#sidebar h3 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            color: #fff;
+            border-bottom: 1px solid #555;
+            padding-bottom: 5px;
+        }
+
+        aside#sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside#sidebar li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        aside#sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        /* Education & Skills Sections */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #fff;
+            border-bottom: 2px solid #00bfff; /* Highlight Color */
+            padding-bottom: 5px;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills-list li {
+            background-color: #333; /* Dark Skill Tags */
+            color: #ccc;
+            padding: 8px 12px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 0.95em;
+        }
+
+        /* Contact Information */
+        .contact-info p {
+            font-size: 1.1em;
+            color: #ddd;
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: #00bfff; /* Highlight Color */
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #1e1e1e; /* Dark Footer */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            header .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #branding {
+                margin-bottom: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+
+            #main .container {
+                grid-template-columns: 1fr;
+            }
+
+            article#main-col {
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <img src="/storage/emulated/O/Download/1737280901996.jpg" alt="Profile Picture">
+                <h1>Mark Geoffrey C. Quimora</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Constructing Tomorrow with Today's Technology</h1>
+            <p>A dedicated IT student with a passion for innovation and a commitment to lifelong learning.</p>
+        </div>
+    </section>
+
+    <section id="main">
+        <div class="container">
+            <article id="main-col">
+                <div id="about" class="section">
+                    <h2>About Me</h2>
+                    <p>
+                        A dedicated IT student, driven by a deep passion for technology and a relentless pursuit of knowledge, who eagerly embraces challenges and isn't afraid to take calculated risks to expand their expertise and make a mark in the digital landscape.
+                    </p>
+                    <p>
+                        Driven by an insatiable curiosity and a commitment to continuous learning, I approach IT with enthusiasm, always seeking new challenges and opportunities to expand my knowledge and skills, even if it means stepping outside my comfort zone.
+                    </p>
+                    <p>
+                        <strong>Professional Objective:</strong> To enhance my technical proficiency and actively participate in shaping the future of IT by embracing lifelong learning and real-world application.
+                    </p>
+                </div>
+
+                <div id="education" class="section">
+                    <h2>Educational Background</h2>
+                    <ul>
+                        <li>Elementary School: Camarin Elementary School</li>
+                        <li>High School: Sampaguita High School</li>
+                        <li>Senior High School: Electron College of Technical Education</li>
+                        <li>College (Present): Bestlink College of the Philippines</li>
+                    </ul>
+                </div>
+            </article>
+
+            <aside id="sidebar">
+                <div id="skills" class="section">
+                    <h3>Skills</h3>
+                    <ul class="skills-list">
+                        <li>Communication Skills</li>
+                        <li>Digital Communication Skills</li>
+                        <li>Adaptability</li>
+                        <li>Critical Thinking</li>
+                        <li>Time Management</li>
+                        <li>Collaborative Learning</li>
+                    </ul>
+                </div>
+
+                <div id="contact" class="section contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Address: Deca Homes Marilao Bulacan, St. Louis Iola Street</p>
+                    <p>Phone: <a href="tel:+639065790206">+63 906 579 0206</a></p>
+                    <p>Facebook: <a href="https://www.facebook.com/markgeoffrey.quimora" target="_blank">Mark Geoffrey Quimora</a></p>
+                    
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Mark Geoffrey C. Quimora &copy; 2025</p>
+        </div>
+    </footer>
+</body>
+</html>
