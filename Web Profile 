@@ -3,506 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark Geoffrey Quimora - Student Profile</title>
+    <title>Mark Geoffrey C. Quimora - Web Profile</title>
     <style>
-        /* Professional color palette */
-        :root {
-            /* Primary colors */
-            --primary: #1e3a8a;     /* Deep navy blue */
-            --primary-light: #3b82f6; /* Bright blue */
-            --primary-dark: #1e40af; /* Dark blue */
-            
-            /* Secondary colors */
-            --secondary: #059669;     /* Emerald green */
-            --secondary-light: #10b981; /* Light green */
-            --secondary-dark: #047857; /* Dark green */
-            
-            /* Accent colors */
-            --accent: #7c3aed;        /* Violet purple */
-            --accent-light: #8b5cf6; /* Light purple */
-            --accent-dark: #6d28d9;   /* Dark purple */
-            
-            /* Neutral colors */
-            --background: #f8fafc;   /* Light blue-gray */
-            --surface: #ffffff;       /* White */
-            --text: #1e293b;         /* Dark slate */
-            --text-light: #64748b;   /* Medium slate */
-            --border: #e2e8f0;       /* Light gray */
-            
-            /* Semantic colors */
-            --success: #10b981;      /* Green */
-            --warning: #f59e0b;      /* Amber */
-            --error: #ef4444;        /* Red */
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--background);
-            color: var(--text);
+            background-color: #1e1e1e; /* Dark Background */
+            color: #ddd; /* Light Text */
             line-height: 1.6;
-            min-height: 100vh;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Header Section */
-        .header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 1rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-lg);
-            position: relative;
+            width: 80%;
+            margin: auto;
             overflow: hidden;
         }
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: float 20s ease-in-out infinite;
+        header {
+            background: #333; /* Dark Header */
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: 3px solid #555; /* Darker Border */
         }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -30px) rotate(120deg); }
-            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
         }
 
-        .profile-container {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.05);
-        }
-
-        .profile-info h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.025em;
-        }
-
-        .profile-info .subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-
-        .profile-info .tagline {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            font-weight: 500;
-            display: inline-block;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* Main Content Grid */
-        .main-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Card Component */
-        .card {
-            background: var(--surface);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-            position: relative;
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
             overflow: hidden;
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
         }
 
-        .card:hover::before {
-            transform: scaleX(1);
+        header #branding {
+            float: left;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+        header #branding h1 {
+            margin: 0;
         }
 
-        .card h2 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        header .highlight, header .current a {
+            color: #aaa; /* Highlight Color */
+            font-weight: bold;
         }
 
-        .card h2::before {
-            content: '';
-            width: 4px;
-            height: 24px;
-            background: var(--primary);
-            border-radius: 2px;
+        header a:hover {
+            color: #ccc;
+            font-weight: bold;
         }
 
-        /* About Section */
-        .about p {
-            color: var(--text);
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-
-        .about .highlight {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
-            border-left: 4px solid var(--accent);
-            border-right: 4px solid var(--accent);
-        }
-
-        .about .highlight strong {
-            color: var(--primary);
-        }
-
-        /* Skills Section */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .skill {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.2s ease;
-        }
-
-        .skill:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Contact Section */
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            background: var(--background);
-            border-radius: 0.5rem;
-            margin-bottom: 0.75rem;
-            transition: all 0.2s ease;
-        }
-
-        .contact-item:hover {
-            background: rgba(59, 130, 246, 0.05);
-            transform: translateX(4px);
-        }
-
-        .contact-item i {
-            color: var(--secondary);
-            font-size: 1.25rem;
-            width: 24px;
+        #showcase {
+            min-height: 400px;
+            background: url('https://via.placeholder.com/1600x400/333/ddd') no-repeat center center/cover; /* Dark Image */
             text-align: center;
+            color: white;
         }
 
-        /* Education Section */
-        .education-item {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: var(--background);
-            border-radius: 0.75rem;
-            border-left: 4px solid var(--primary);
-            transition: all 0.2s ease;
+        #showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
         }
 
-        .education-item:hover {
-            background: rgba(59, 130, 246, 0.05);
-            transform: translateX(4px);
+        #showcase p {
+            font-size: 20px;
         }
 
-        .education-item h3 {
-            color: var(--primary);
-            font-size: 1.125rem;
-            margin-bottom: 0.25rem;
+        #newsletter {
+            padding: 15px;
+            color: #fff;
+            background: #222; /* Dark Newsletter */
         }
 
-        .education-item .school {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 0.25rem;
+        #newsletter h1 {
+            float: left;
         }
 
-        .education-item .date {
-            color: var(--text-light);
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
-            background: var(--surface);
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            box-shadow: var(--shadow-sm);
+        #newsletter form {
+            float: right;
+            margin-top: 15px;
         }
 
-        /* Interests Section */
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
+        #newsletter input[type="email"] {
+            padding: 4px;
+            height: 25px;
+            width: 250px;
+            background-color: #444; /* Dark Input */
+            color: #fff;
+            border: none;
         }
 
-        .interest {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1rem;
-            background: var(--background);
-            border-radius: 0.75rem;
-            transition: all 0.2s ease;
-            cursor: pointer;
+        .button_1 {
+            height: 38px;
+            background: #555; /* Dark Button */
+            border: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: #fff;
         }
 
-        .interest:hover {
-            background: rgba(124, 58, 237, 0.1);
-            transform: translateY(-2px);
+        article#main-col {
+            float: left;
+            width: 65%;
         }
 
-        .interest i {
-            color: var(--accent);
-            font-size: 1.25rem;
+        aside#sidebar {
+            float: right;
+            width: 30%;
+            margin-top: 10px;
         }
 
-        /* Footer */
+        #main-col h1 {
+            font-size: 25px;
+        }
+
+        .dark {
+            padding: 15px;
+            background: #333; /* Dark Aside */
+            color: #fff;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        aside#sidebar .dark {
+            padding: 15px;
+            background: #333; /* Dark Sidebar */
+            color: #fff;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
         footer {
-            background: var(--surface);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow-md);
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #333; /* Dark Footer */
             text-align: center;
-            border: 1px solid var(--border);
-            margin-top: 2rem;
-        }
-
-        footer p {
-            color: var(--text-light);
-        }
-
-        footer p:last-child {
-            margin-top: 0.5rem;
-            font-style: italic;
-            font-size: 0.875rem;
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .header {
-                padding: 2rem;
-            }
-            
-            .profile-container {
-                flex-direction: column;
+        @media(max-width: 768px) {
+            header #branding,
+            header nav,
+            header nav li,
+            #newsletter h1,
+            #newsletter form,
+            article#main-col,
+            aside#sidebar {
+                float: none;
                 text-align: center;
+                width: 100%;
             }
-            
-            .profile-info h1 {
-                font-size: 2rem;
+
+            header {
+                padding-bottom: 50px;
             }
-            
-            .main-content {
-                grid-template-columns: 1fr;
+
+            #showcase h1 {
+                margin-top: 40px;
             }
-            
-            .profile-img {
-                width: 90px;
-                height: 60px;
+
+            #newsletter form {
+                margin-top: 0;
             }
         }
     </style>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header class="header">
-            <div class="profile-container">
-                <img src="/storage/emulated/O/Download/1737280901996.jpg" alt="Profile Picture" class="profile-img">
-                <div class="profile-info">
-                    <h1>Mark Geoffrey C. Quimora</h1>
-                    <div class="subtitle">Bachelor of Science in Information Technology</div>
-                    <div class="tagline">Constructing Tomorrow with Today's Technology.</div>
-                </div>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Mark Geoffrey C. Quimora</h1>
             </div>
-        </header>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- About Section -->
-            <section class="card about">
-                <h2>About Me</h2>
-                <p>A dedicated IT student, driven by a deep passion for technology and a relentless pursuit of knowledge, who eagerly embraces challenges and isn't afraid to take calculated risks to expand their expertise and make a mark in the digital landscape.</p>
-                
-                <p>Driven by an insatiable curiosity and a commitment to continuous learning, I approach IT with enthusiasm, always seeking new challenges and opportunities to expand my knowledge and skills, even if it means stepping outside my comfort zone.</p>
-                
-                <div class="highlight">
-                    <strong>🎯 Professional Objective:</strong> 3. To enhance my technical proficiency and actively participate in shaping the future of IT by embracing lifelong learning and real-world application.
-                </div>
-            </section>
-
-            <!-- Skills Section -->
-            <section class="card">
-                <h2>My Skills</h2>
-                <div class="skills">
-                    <span class="skill">Communication Skills</span>
-                    <span class="skill">Digital Communication</span>
-                    <span class="skill">Time Management</span>
-                    <span class="skill">Attention to Detail</span>
-                    <span class="skill">Problem Analysis</span>
-                    <span class="skill">Adaptability</span>
-                    <span class="skill">Collaborative Learning</span>
-
-                    <span class="skill">Critical Thinking</span>
-                </div>
-            </section>
-
-                <!-- Contact Section -->
-            <section class="card">
-                <h2>Contact Information</h2>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>trajemaryjean@email.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+63 906 579 0206</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Marilao, Bulacan, Philippines</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>www.linkedin.com/in/mary-jean-traje-estopil-324b86397</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>https://github.com/quimoramarkgeoffrey-dot</span>
-                </div>
-            </section>
-
-            <!-- Education Section -->
-            <section class="card">
-                <h2>Educational Background</h2>
-                <div class="education-item">
-                    <h3>Bachelor of Science in Information Technology</h3>
-                    <div class="school">Bestlink College of the Philippines</div>
-                    <div class="date">2nd Year Student (2024 - Present)</div>
-                    <p>Undertaking foundational studies in IT, with a focus on programming, systems analysis methodologies, and database management techniques.</p>
-                </div>
-                <div class="education-item">
-                    <h3>Senior High School</h3>
-                    <div class="school">Electron College Of Technical Education Corporation</div>
-                    <div class="date">Home Economics</div>
-                    <p>Completed secondary education with focus on Technical Vocational Livelihood, Home Economis Major in Cookery.</p>
-                </div>
-            </section>
-
-            <!-- Interests Section -->
-            <section class="card" style="grid-column: span 2;">
-                <h2>Professional Interests</h2>
-                <div class="interests">
-                    <div class="interest">
-                        <i class="fas fa-laptop-code"></i>
-                        <span>Web Development</span>
-                    </div>
-                    <div class="interest">
-                        <i class="fas fa-database"></i>
-                        <span>Database Systems</span>
-                    </div>
-                    <div class="interest">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>Mobile Applications</span>
-                    </div>
-                    <div class="interest">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Cybersecurity</span>
-                    </div>
-                    <div class="interest">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Data Analytics</span>
-                    </div>
-                    <div class="interest">
-                        <i class="fas fa-robot"></i>
-                        <span>Artificial Intelligence</span>
-                    </div>
-                </div>
-            </section>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#">About</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Mark Geoffrey C. Quimora. All rights reserved.</p>
-            <p>Designed with passion for innovation and excellence</p>
-        </footer>
-    </div>
+    <section id="showcase">
+        <div class="container">
+            <h1>Constructing Tomorrow with Today's Technology</h1>
+            <p>A dedicated IT student, driven by a deep passion for technology.</p>
+        
+            <h1>About Me</h1>
+            <p>
+                A dedicated IT student, driven by a deep passion for technology and a relentless pursuit of knowledge, who eagerly embraces challenges and isn't afraid to take calculated risks to expand their expertise and make a mark in the digital landscape.
+            </p>
+            <p>
+                Driven by an insatiable curiosity and a commitment to continuous learning, I approach IT with enthusiasm, always seeking new challenges and opportunities to expand my knowledge and skills, even if it means stepping outside my comfort zone.
+            </p>
+            <p>
+                <strong>Professional Objective:</strong> To enhance my technical proficiency and actively participate in shaping the future of IT by embracing lifelong learning and real-world application.
+            </p>
+        </article>
+
+        <aside id="sidebar">
+            <div class="dark">
+                <h3>Skills</h3>
+                <ul>
+                    <li>Communication Skills</li>
+                    <li>Digital Communication Skills</li>
+                    <li>Adaptability</li>
+                    <li>Critical Thinking</li>
+                    <li>Time Management</li>
+                    <li>Collaborative Learning</li>
+                </ul>
+            </div>
+        </aside>
+    </section>
+
+    <section class="container">
+        <article id="main-col">
+            <h1>Educational Background</h1>
+            <ul>
+                <li>Elementary: Camarin Elementary School</li>
+                <li>High School: Sampaguita High School</li>
+                <li>Senior High School: Electron College of Technical Education</li>
+                <li>College (Present): Bestlink College of the Philippines</li>
+            </ul>
+        </article>
+
+        <aside id="sidebar">
+            <div class="dark">
+                <h3>Contact Information</h3>
+                <p>Address: Deca Homes Marilao Bulacan, St. Louis Iola Street</p>
+                <p>Contact Number: +63 906 579 0206</p>
+            </div>
+        </aside>
+    </section>
+
+    <footer>
+        <p>Mark Geoffrey C. Quimora &copy; 2025</p>
+    </footer>
 </body>
 </html>
